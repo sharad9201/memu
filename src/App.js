@@ -9,6 +9,11 @@ function App() {
 
   const [categories, setCategories] = useState([])
 
+  //only pass if the data matches the item in the category
+  const filterItems = (category) =>{
+    const newItems = items.filter((item)=> item.category === category)
+    setMenuItems(newItems)
+  }
 
   return <main>
     <section className="menu section">
@@ -19,7 +24,7 @@ function App() {
         <div className="underline">
 
         </div>
-        <Categories />
+        <Categories filterItems={filterItems} />
         {/* //sending the data  prooops to the menu components */}
         <Menu items={menuItems}/>
       </div>
