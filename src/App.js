@@ -11,6 +11,11 @@ function App() {
 
   //only pass if the data matches the item in the category
   const filterItems = (category) =>{
+    if(category === 'all')
+    {
+      setMenuItems(items)
+      return
+    }
     const newItems = items.filter((item)=> item.category === category)
     setMenuItems(newItems)
   }
